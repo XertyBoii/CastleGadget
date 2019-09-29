@@ -1,0 +1,8 @@
+main: Main
+name: CastleGadget
+version: '0.1'
+description: A plugin to spawn a castle with a gadget
+author: Xerty
+commands:
+  gadget:
+    description: Get the gadget item
