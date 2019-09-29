@@ -131,9 +131,8 @@ public class SpawnCastle extends BukkitRunnable {
                         }
                     }
 
-                    //lil bit hacky but we need the world outside of the for loop to play the sound
-                    Location first = SpawnCastle.this.entities.get(0).getLocation();
-                    first.getWorld().playSound(first, Sound.BLOCK_STONE_PLACE, 1F, 1F);
+                    //play the sound upon construction
+                    SpawnCastle.this.origin.getWorld().playSound(SpawnCastle.this.origin, Sound.BLOCK_STONE_PLACE, 1F, 1F);
 
                     if (SpawnCastle.this.raisedY == 0.0D) {
                         SpawnCastle.this.raisedY = SpawnCastle.this.raisedY + 0.6D;
@@ -143,8 +142,7 @@ public class SpawnCastle extends BukkitRunnable {
 
                 } else {
                     //finished
-                    Location first = SpawnCastle.this.entities.get(0).getLocation();
-                    first.getWorld().playSound(first, Sound.ENTITY_PLAYER_LEVELUP, 1F, 1F);
+                    SpawnCastle.this.origin.getWorld().playSound(SpawnCastle.this.origin, Sound.ENTITY_PLAYER_LEVELUP, 1F, 1F);
                     SpawnCastle.this.stage = Stage.SHOWCASE;
                 }
             }
